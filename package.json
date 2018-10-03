@@ -1,0 +1,29 @@
+{
+  "name": "liqd-options",
+  "description": "Options validation library",
+  "version": "1.0.0",
+  "author": "radixxko",
+  "license": "MIT",
+  "main": "lib/options.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/radixxko/liqd-options.git"
+  },
+  "keywords": [
+    "options",
+    "validation",
+    "liqd"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0"
+  }
+}
