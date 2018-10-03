@@ -52,7 +52,19 @@ describe( 'Tests', () =>
 					barfoo: { _requires: 'foo' }
 				},
 				def: 64,
-				fed: 48
+				fed: 48,
+				expand :
+				{
+					_expand: true,
+
+					foo: true,
+					bar: { _default: 'foo' }
+				},
+				dont_expand:
+				{
+					foo: true,
+					bar: { _default: 'foo' }
+				}
 			}),
 			{
 				foo: 'bar',
@@ -80,7 +92,12 @@ describe( 'Tests', () =>
 					}
 				},
 				def: 42,
-				fed: 48
+				fed: 48,
+				expand :
+				{
+					foo: true,
+					bar: 'foo'
+				}
 			}
 		);
 	});
