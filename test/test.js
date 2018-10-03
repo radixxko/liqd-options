@@ -29,6 +29,8 @@ describe( 'Tests', () =>
 				{
 
 				},
+				expandable: true,
+				expandables: false,
 				def: 42
 			},
 			{
@@ -64,6 +66,20 @@ describe( 'Tests', () =>
 				{
 					foo: true,
 					bar: { _default: 'foo' }
+				},
+				expandable:
+				{
+					_expand: true,
+
+					foo: true,
+					bar: { _default: 'foo' }
+				},
+				expandables:
+				{
+					_expand: true,
+
+					foo: true,
+					bar: { _default: 'foo' }
 				}
 			}),
 			{
@@ -94,6 +110,11 @@ describe( 'Tests', () =>
 				def: 42,
 				fed: 48,
 				expand :
+				{
+					foo: true,
+					bar: 'foo'
+				},
+				expandable :
 				{
 					foo: true,
 					bar: 'foo'
