@@ -205,6 +205,48 @@ describe( 'Tests', () =>
 		}
 		catch(e){ assert.equal( e.message, 'Invalid options: "bar" does not meet the requirements of "foo.bar.fooobar.barfoo"' ); }
 	});
+
+	it('should pass', function()
+	{
+		assert.deepStrictEqual
+		(
+			Options(
+			{
+				frame:
+	   			{
+					limit: 104857600,
+	     			compression: { _default: false, treshold: 1024 }
+				}
+			},
+			{
+				tls 	: { _required: false, _type: 'object' },
+				frame	:
+				{
+					_expand	: true,
+
+					mask	: { _type: 'boolean', _default: true },
+					limit	: { _type: 'number', _default: 100 * 1024 * 1024, _convert: $ => Math.min( $, 100 * 1024 * 1024 )},
+					compression	:
+					{
+						_default: false, _expand: true,
+
+						treshold: { _type: 'number', _default: 1024 }
+					}
+				}
+			}),
+			{
+				frame:
+		   		{
+					mask: true,
+					limit: 104857600,
+					compression:
+					{
+						treshold: 1024
+					}
+				}
+			}
+		);
+	});
 });
 /*
 _required 	: true,
