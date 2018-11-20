@@ -1,7 +1,7 @@
 {
   "name": "liqd-options",
   "description": "Options validation library",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "radixxko",
   "license": "MIT",
   "main": "lib/options.js",
